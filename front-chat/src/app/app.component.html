@@ -1,0 +1,5 @@
+<p *ngFor="let message of messages">
+  {{message}}
+</p>
+<input #messageInput>
+<button (click)="submitMessage()" >Submit</button>
