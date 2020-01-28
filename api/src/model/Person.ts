@@ -1,10 +1,12 @@
-import {SSN} from "./SSN";
+import {Ssn} from "./Ssn";
 
-class Person {
+export class Person {
+    
     public firstName:string;
     public name:string;
-    public ssn : SSN;
-    constructor(firstName : string, name: string, ssn: SSN){
+    public ssn : Ssn;
+
+    constructor(firstName : string, name: string, ssn: Ssn){
         this.firstName = firstName;
         this.name = name;
         this.ssn = ssn;

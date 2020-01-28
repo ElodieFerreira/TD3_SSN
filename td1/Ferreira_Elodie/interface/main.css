@@ -1,7 +1,0 @@
-input {
-    margin:2px;
-    padding: 4px 5px;
-    border-radius:5px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-}

@@ -1,18 +1,23 @@
-class SSN {
-    constructor(secu) {
-        this.secu_number = secu;
+export class Ssn {
+    
+    private secu_number: string;
+
+    constructor(secu_number : string) {
+        this.secu_number = secu_number;
     }
+    
     // ------------------------------------------------------------------------------------------------------------
     // VALIDITY STUFF
     // ------------------------------------------------------------------------------------------------------------
-    isValid() {
+    public isValid() {
         // ---- is Valid if enough char and key ok
         return this.controlSsnValue() && this.controlSsnKey();
     }
+    
     /**
-     * Private function to check value
+     * Function to check value
      */
-    controlSsnValue() {
+    private controlSsnValue() {
         let regExpSsn = new RegExp("^" +
             "([1-37-8])" +
             "([0-9]{2})" +
@@ -22,10 +27,11 @@ class SSN {
             "(0[1-9]|[1-8][0-9]|9[0-7])$");
         return regExpSsn.test(this.secu_number);
     }
+
     /**
-     * Private function to check NIR
+     * Function to check NIR
      */
-    controlSsnKey() {
+    private controlSsnKey() {
         // -- Extract classic information
         let myValue = this.secu_number.substr(0, 13);
         let myNir = this.secu_number.substr(13);
@@ -35,10 +41,11 @@ class SSN {
         let myNumber = +myValue;
         return (97 - (myNumber % 97) == +myNir);
     }
+    
     // ------------------------------------------------------------------------------------------------------------
     // INFO STUFF
     // ------------------------------------------------------------------------------------------------------------
-    getInfo() {
+    public getInfo() {
         return {
             sex: this.extractSex(),
             birthDate: this.extractbirthDate(),
@@ -46,17 +53,13 @@ class SSN {
             birthPosition: this.extractPosition()
         };
     }
-    /**
-     *
-     */
-    extractSex() {
+
+    public extractSex() {
         let sex = this.secu_number.substr(0, 1);
         return sex == "1" || sex == "3" || sex == "8" ? "Homme" : "Femme";
     }
-    /**
-     *
-     */
-    extractbirthDate() {
+
+    public extractbirthDate() {
         // -- Build a date
         let month = +this.secu_number.substr(3, 2);
         // -- special case
@@ -66,10 +69,8 @@ class SSN {
         let birth = new Date(+this.secu_number.substr(1, 2), month);
         return birth;
     }
-    /**
-     *
-     */
-    extractBirthPlace() {
+
+    public extractBirthPlace() {
         let dept = +this.secu_number.substr(5, 2);
         // --- Case DOM TOM
         if (dept == 97 || dept == 98) {
@@ -91,10 +92,8 @@ class SSN {
             };
         }
     }
-    /**
-     *
-     */
-    extractPosition() {
+
+    public extractPosition() {
         return +this.secu_number.substr(10, 3);
     }
 }
