@@ -2,13 +2,13 @@ import {Ssn} from "./Ssn";
 
 export class Person {
     
-    public firstName:string;
-    public name:string;
+    public prenom:string;
+    public nomDeFamille:string;
     public ssn : Ssn;
 
-    constructor(firstName : string, name: string){
-        this.firstName = firstName;
-        this.name = name;
+    constructor(prenom : string, nomDeFamille: string){
+        this.prenom = prenom;
+        this.nomDeFamille = nomDeFamille;
     }
 
     setSSN(ssn: Ssn) {

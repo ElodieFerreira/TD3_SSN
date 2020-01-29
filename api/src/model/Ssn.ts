@@ -7,12 +7,12 @@ export class Ssn {
     private commune_nom: string;
     private commune_numero: string;
     private sexe: string;
+    private validite: boolean;
     private ssn: string;
     
     constructor(ssn : string) {
         this.ssn = ssn;
-        if(!this.isValide())
-            throw new Error("SSN non valide");
+        this.validite = this.isValide();
     }
     
     // ------------------------------------------------------------------------------------------------------------
@@ -48,6 +48,9 @@ export class Ssn {
     // ------------------------------------------------------------------------------------------------------------
     // methode des information
     // ------------------------------------------------------------------------------------------------------------
+    public GetValidite(){
+        return this.validite;
+    }
     public async getInfo() {
         let data = await this.getCommuneDepartement();
         this.sexe = this.GetSexe();
@@ -105,7 +108,7 @@ export class Ssn {
         }
         else {
             let nom = await this.getDepartement(this.ssn.substr(5, 2));
-            data.departement_nom = name;
+            data.departement_nom = nom;
             data.departement_numero = this.ssn.substr(5, 3);
             data.commune_numero = this.ssn.substr(7, 3); //verifier si bon nombre
             data.commune_nom = null;
@@ -113,13 +116,12 @@ export class Ssn {
         }
     }
 
-    public async toString() {
-        let obj = await this.getInfo();
+    public toString() {
         return `Sexe: ${this.sexe} 
          Date de naissance: ${this.date_de_naissance}
-         Nom du Departement ${this.departement_nom}
-         Numero du departement ${this.departement_numero}
-         Nom de commune ${this.commune_nom}
-         Numero de la commune ${this.commune_numero}`
+         Nom du Departement: ${this.departement_nom}
+         Numero du departement: ${this.departement_numero}
+         Nom de commune: ${this.commune_nom}
+         Numero de la commune: ${this.commune_numero}`
     }
 }
