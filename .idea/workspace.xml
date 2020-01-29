@@ -2,32 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca04cbaf-912c-43ca-9c1f-52aebfa53ac1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/server.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/td1/Ferreira_Elodie/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/td1/Ferreira_Elodie/.idea/Ferreira_Elodie.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/td1/Ferreira_Elodie/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/td1/Ferreira_Elodie/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/td1/Ferreira_Elodie/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/td1/Ferreira_Elodie/Person.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/td1/Ferreira_Elodie/SSN.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/td1/Ferreira_Elodie/SSN.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/td1/Ferreira_Elodie/interface/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/td1/Ferreira_Elodie/interface/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/td1/Ferreira_Elodie/test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/td1/Ferreira_Elodie/test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/td2/_supports/commune.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/td2/_supports/pays.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/td2/ferreira_elodie/.idea/Techno Log.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/td2/ferreira_elodie/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/td2/ferreira_elodie/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/td2/ferreira_elodie/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/td2/ferreira_elodie/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/td2/ferreira_elodie/Ssn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/td2/ferreira_elodie/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/api/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +17,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Test" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -81,6 +56,7 @@
       <option name="presentableId" value="Default" />
       <updated>1580241197306</updated>
       <workItem from="1580241199631" duration="7346000" />
+      <workItem from="1580290909981" duration="653000" />
     </task>
     <servers />
   </component>
@@ -98,7 +74,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
