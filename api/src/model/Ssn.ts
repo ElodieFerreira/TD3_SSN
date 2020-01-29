@@ -63,12 +63,13 @@ export class Ssn {
     public extractbirthDate() {
         // -- Build a date
         let month = +this.secu_number.substr(3, 2);
+        console.log(month);
         // -- special case
         if (month == 62 || month == 63) {
             month = 1;
         }
         let birth = new Date(+this.secu_number.substr(1, 2), month);
-        return birth;
+        return `${birth.getMonth()}/${birth.getFullYear()}`
     }
 
     public async getDept(dept:string) {
