@@ -1,24 +1,29 @@
 import * as fetch from "node-fetch";
-export class Ssn {
-    private commune_nom : string;
-    private secu_number: string;
 
-    constructor(secu_number : string) {
-        this.secu_number = secu_number;
+export class Ssn {
+    private departement_nom : string;
+    private departement_numero: string;
+    private date_de_naissance: string;
+    private commune_nom: string;
+    private commune_numero: string;
+    private sexe: string;
+    private ssn: string;
+    
+    constructor(ssn : string) {
+        this.ssn = ssn;
+        if(!this.isValide())
+            throw new Error("SSN non valide");
     }
     
     // ------------------------------------------------------------------------------------------------------------
-    // VALIDITY STUFF
+    // Methode de validation
     // ------------------------------------------------------------------------------------------------------------
-    public isValid() {
+    public isValide() {
         // ---- is Valid if enough char and key ok
-        return this.controlSsnValue() && this.controlSsnKey();
+        return this.controleValeurSsn() && this.ControleClefSsn();
     }
     
-    /**
-     * Function to check value
-     */
-    private controlSsnValue() {
+    private controleValeurSsn() {
         let regExpSsn = new RegExp("^" +
             "([1-37-8])" +
             "([0-9]{2})" +
@@ -26,16 +31,13 @@ export class Ssn {
             "((0[1-9]|[1-8][0-9]|9[0-69]|2[abAB])(00[1-9]|0[1-9][0-9]|[1-8][0-9]{2}|9[0-8][0-9]|990)|(9[78][0-9])(0[1-9]|[1-8][0-9]|90))" +
             "(00[1-9]|0[1-9][0-9]|[1-9][0-9]{2})" +
             "(0[1-9]|[1-8][0-9]|9[0-7])$");
-        return regExpSsn.test(this.secu_number);
+        return regExpSsn.test(this.ssn);
     }
 
-    /**
-     * Function to check NIR
-     */
-    private controlSsnKey() {
+    private ControleClefSsn() {
         // -- Extract classic information
-        let myValue = this.secu_number.substr(0, 13);
-        let myNir = this.secu_number.substr(13);
+        let myValue = this.ssn.substr(0, 13);
+        let myNir = this.ssn.substr(13);
         // -- replace special value like corsica
         myValue.replace('2B', "18").replace("2A", "19");
         // -- transform as number
@@ -44,79 +46,80 @@ export class Ssn {
     }
     
     // ------------------------------------------------------------------------------------------------------------
-    // INFO STUFF
+    // methode des information
     // ------------------------------------------------------------------------------------------------------------
     public async getInfo() {
-        return {
-            sex: this.extractSex(),
-            birthDate: this.extractbirthDate(),
-            birthPlace: await this.extractBirthPlace(),
-            birthPosition: this.extractPosition()
-        };
+        let data = await this.getCommuneDepartement();
+        this.sexe = this.GetSexe();
+        this.date_de_naissance = this.getDateDeNaissance()
+        this.departement_nom = data.departement_nom;
+        this.departement_numero = data.departement_numero;
     }
 
-    public extractSex() {
-        let sex = this.secu_number.substr(0, 1);
-        return sex == "1" || sex == "3" || sex == "8" ? "Homme" : "Femme";
+    public GetSexe() {
+        let sexe = this.ssn.substr(0, 1);
+        return sexe == "1" || sexe == "3" || sexe == "8" ? "Homme" : "Femme";
     }
 
-    public extractbirthDate() {
-        // -- Build a date
-        let month = +this.secu_number.substr(3, 2);
-        console.log(month);
-        // -- special case
-        if (month == 62 || month == 63) {
-            month = 1;
-        }
-        let birth = new Date(+this.secu_number.substr(1, 2), month);
-        return `${birth.getMonth()}/${birth.getFullYear()}`
+    private getDateDeNaissance() {
+
+       let month = +this.ssn.substr(3, 2);
+       console.log(month);
+
+       if (month == 62 || month == 63) {
+           month = 1;
+       }
+       let birth = new Date(+this.ssn.substr(1, 2), month);
+       return `${birth.getMonth()}/${birth.getFullYear()}`
     }
 
-    public async getDept(dept:string) {
-        this.commune_nom = await fetch('https://geo.api.gouv.fr/departements/'+dept+'?fields=nom&format=json&geometry=centre')
+    private async getDepartement(dept:string) {
+        return await fetch('https://geo.api.gouv.fr/departements/'+dept+'?fields=nom&format=json&geometry=centre')
             .then(res => res.json())
             .then(data => {
                 let Commune = ({ data });
                 return Commune.data.nom;
             })
-        console.log(this.commune_nom);
-
     }
 
+    private async getCommuneDepartement() {
+        let dept = +this.ssn.substr(5, 2);
+        let data = {
+            departement_nom: null,
+            departement_numero: null,
+            commune_numero: null,
+            commune_nom: null,
+            pays: null
+        };
 
-    public async extractBirthPlace() {
-        let dept = +this.secu_number.substr(5, 2);
         // --- Case DOM TOM
         if (dept == 97 || dept == 98) {
-            return {
-                dept: this.secu_number.substr(5, 3),
-                commune: this.secu_number.substr(8, 2),
-            };
+            data.departement_numero = this.ssn.substr(5, 3);
+            data.commune_numero = this.ssn.substr(8, 2);
+            return data;
         }
         else if (dept == 99) {
-            return {
-                dept: "Etranger",
-                pays: this.secu_number.substr(7, 3)
-            };
+            data.departement_nom = "Etranger";
+            data.pays = this.ssn.substr(7, 3);
+            return data;
         }
         else {
-            await this.getDept(this.secu_number.substr(5, 2));
-            return {
-                dept: this.commune_nom,
-                commune: this.secu_number.substr(7, 3)
-            };
+            let nom = await this.getDepartement(this.ssn.substr(5, 2));
+            data.departement_nom = name;
+            data.departement_numero = this.ssn.substr(5, 3);
+            data.commune_numero = this.ssn.substr(7, 3); //verifier si bon nombre
+            data.commune_nom = null;
+            return data;
         }
-    }
-
-    public extractPosition() {
-        return +this.secu_number.substr(10, 3);
     }
 
     public async toString() {
         let obj = await this.getInfo();
-        return `Sex: ${obj.sex} 
-         Birthdate: ${obj.birthDate},
-         BirthRegion ${obj.birthPlace.dept},
-         BirthPosition: ${obj.birthPosition},`
+        return `Sexe: ${this.sexe} 
+         Date de naissance: ${this.date_de_naissance}
+         Nom du Departement ${this.departement_nom}
+         Numero du departement ${this.departement_numero}
+         Nom de commune ${this.commune_nom}
+         Numero de la commune ${this.commune_numero}`
     }
 }
