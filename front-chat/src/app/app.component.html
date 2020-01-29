@@ -1,5 +1,11 @@
-<p *ngFor="let message of messages">
-  {{message}}
-</p>
-<input #messageInput>
-<button (click)="submitMessage()" >Submit</button>
+<div class="container">
+  <ul class="list-group list-group-flush">
+    <li *ngFor="let message of messages" class="list-group-item">{{message}}</li>
+  </ul>
+  <div class="input-group mb-3">
+    <input #messageInput type="text" class="form-control" placeholder="Your message" aria-label="Your message">
+    <div class="input-group-append">
+      <button class="btn btn-primary" (click)="submitMessage()" type="button">Submit</button>
+    </div>
+  </div>
+</div>

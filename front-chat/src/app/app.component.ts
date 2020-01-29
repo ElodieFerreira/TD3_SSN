@@ -32,6 +32,7 @@ export class AppComponent {
     // Console ce msg
     // console.log(this.messageInput.nativeElement.value);
     this.chat_service.sendMessage(this.messageInput.nativeElement.value);
+    this.messageInput.nativeElement.value = '';
 
   }
 

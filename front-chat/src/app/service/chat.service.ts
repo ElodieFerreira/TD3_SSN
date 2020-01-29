@@ -8,14 +8,21 @@ import {Socket} from "ngx-socket-io";
 export class ChatService {
   private msg: string[];
   public msg_subject: Subject<string[]>;
+  private event: string;
 
   constructor(private socket:Socket) {
+    // First event expected by the socket
+    this.event = "nom";
     this.msg = [];
     this.msg_subject = new Subject<string[]>();
-    this.socket.fromEvent("message").subscribe((data:string)=>{
-      this.msg.push(data);
+
+    this.socket.fromEvent("message").subscribe((data:any)=>{
+      console.log(data);
+      // Take the next event from the data
+      this.event = data.event;
+      this.msg.push(data.content);
       this.emitMessage();
-    })
+    });
   }
 
   private emitMessage(){
@@ -23,7 +30,7 @@ export class ChatService {
   }
 
   public sendMessage(msg_get:string) {
-    this.socket.emit("message", msg_get );
+    this.socket.emit(this.event, msg_get );
     this.msg.push(msg_get);
     this.emitMessage();
   }

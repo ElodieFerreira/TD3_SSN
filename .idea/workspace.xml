@@ -2,7 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca04cbaf-912c-43ca-9c1f-52aebfa53ac1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/api/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/TD3_SSN.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/dist/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/dist/server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-chat/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/front-chat/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-chat/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/front-chat/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-chat/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front-chat/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-chat/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/front-chat/src/app/app.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-chat/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-chat/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-chat/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-chat/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-chat/src/app/service/chat.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-chat/src/app/service/chat.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/td1/Ferreira_Elodie/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/td1/Ferreira_Elodie/.idea/Ferreira_Elodie.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/td1/Ferreira_Elodie/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/td1/Ferreira_Elodie/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/td1/Ferreira_Elodie/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/td1/Ferreira_Elodie/Person.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/model/Person.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/td1/Ferreira_Elodie/SSN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/td1/Ferreira_Elodie/SSN.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/td1/Ferreira_Elodie/interface/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/td1/Ferreira_Elodie/interface/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/td1/Ferreira_Elodie/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/td1/Ferreira_Elodie/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/td2/_supports/commune.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/td2/_supports/pays.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/td2/ferreira_elodie/.idea/Techno Log.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/td2/ferreira_elodie/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/td2/ferreira_elodie/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/td2/ferreira_elodie/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/td2/ferreira_elodie/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/td2/ferreira_elodie/Ssn.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/model/Ssn.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/td2/ferreira_elodie/server.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +59,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -25,7 +67,8 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Users\elodi\Documents\TD3\TD3_SSN\node_modules\typescript\lib" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="ts.external.directory.path" value="C:\Users\elodi\Documents\TD3\TD3_SSN\api\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -56,7 +99,10 @@
       <option name="presentableId" value="Default" />
       <updated>1580241197306</updated>
       <workItem from="1580241199631" duration="7346000" />
-      <workItem from="1580290909981" duration="653000" />
+      <workItem from="1580290909981" duration="654000" />
+      <workItem from="1580292682579" duration="918000" />
+      <workItem from="1580299343066" duration="4149000" />
+      <workItem from="1580323569138" duration="10100000" />
     </task>
     <servers />
   </component>
@@ -66,6 +112,7 @@
       <list>
         <option value="$PROJECT_DIR$/td1/Ferreira_Elodie/test.js" />
         <option value="$PROJECT_DIR$/td1/Ferreira_Elodie/SSN.js" />
+        <option value="$PROJECT_DIR$/front-chat/node_modules/karma/config.tpl.js" />
       </list>
     </option>
   </component>
@@ -81,5 +128,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/api/src/model/Ssn.ts</url>
+          <line>85</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
