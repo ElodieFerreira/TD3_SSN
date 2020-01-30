@@ -1,0 +1,10 @@
+FROM node:12
+
+WORKDIR /usr/src/app
+COPY . /usr/src/app/
+EXPOSE 3011 3012
+ENV PORT=3011
+ENV IP=localhost
+RUN npm i
+WORKDIR /usr/src/app/src
+CMD npm run start:docker
