@@ -1,10 +1,10 @@
-FROM node:12
+FROM node:12 as build
 
-WORKDIR /app/
+WORKDIR /usr/src/app/
 
-COPY . /app/
+COPY . /usr/src/app/
 EXPOSE 4200
 
-RUN npm i & npm i -g @angular/cli@8.0.1 & npm i -dev @angular-devkit/build-angular
+RUN npm i & npm i -g @angular/cli@8.0.1 && npm i --only=dev @angular-devkit/build-angular
 
 CMD ng serve --host 0.0.0.0

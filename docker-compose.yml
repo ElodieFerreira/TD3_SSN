@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  db:
+    image: mongo
+    restart: always
+    command: mongod
+    ports:
+      - 4000:27017
+  api:
+    depends_on:
+      - db
+    image: kiright/ueve-m1-technolog-td3-api
+    ports:
+      - 3011:3011
+      - 3012:3012
+
+  front:
+    depends_on:
+      - api
+    image: kiright/ueve-m1-technolog-td3-front
+    ports:
+      - 4200:4200
