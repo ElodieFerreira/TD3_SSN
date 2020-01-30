@@ -4,10 +4,13 @@ import {SocketIoModule} from "ngx-socket-io";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {ChatService} from "./service/chat.service";
+import { TableResultComponent } from './components/table-result/table-result.component';
+import {ApiServiceService} from "./service/api-service.service";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TableResultComponent
   ],
   imports: [
     BrowserModule,
@@ -17,7 +20,8 @@ import {ChatService} from "./service/chat.service";
       options: {}
     })
   ],
-  providers: [ChatService],
+  providers: [ChatService,
+  ApiServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
