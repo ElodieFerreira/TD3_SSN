@@ -5,7 +5,8 @@ Pour lancer le serveur il faut faire la commande `npm start` dans le sous-dossie
 Pour lancer le le front faut lancer la commande `npm start` dans le sous-dossier front-chat
 
 En passant par docker, 
-s'assurer d'être en linux container, et lancer la commande docker-compose up à la racine du dossier où se situe le docker-compose.yml
+S'assurer d'être en linux container, et lancer la commande `docker-compose up` à la racine du dossier où se situe le docker-compose.yml
+L'api et le front sont tous les deux disponnibles sur docker hub kiright/ueve-m1-technolog-td3-api et kiright/ueve-m1-technolog-td3-front
 
 Les url accessibles en localhost :
 L'api est accessible via le port 3011, socket 3012
