@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ca04cbaf-912c-43ca-9c1f-52aebfa53ac1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/model/Ssn.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/model/Ssn.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-chat/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-chat/src/app/app-routing.module.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,6 +62,7 @@
       <workItem from="1580292682579" duration="918000" />
       <workItem from="1580299343066" duration="4149000" />
       <workItem from="1580323569138" duration="11250000" />
+      <workItem from="1580371020772" duration="2320000" />
     </task>
     <servers />
   </component>
@@ -87,17 +88,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/api/src/model/Ssn.ts</url>
-          <line>86</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

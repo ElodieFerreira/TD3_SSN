@@ -1,0 +1,10 @@
+FROM node:12
+
+WORKDIR /app/
+
+COPY . /app/
+EXPOSE 4200
+
+RUN npm i & npm i -g @angular/cli@8.0.1 & npm i -dev @angular-devkit/build-angular
+
+CMD ng serve --host 0.0.0.0
