@@ -5,6 +5,10 @@ WORKDIR /usr/src/app/
 COPY . /usr/src/app/
 EXPOSE 4200
 
+<<<<<<< HEAD
 RUN npm i & npm i -g @angular/cli@8.0.1 && npm i --only=dev @angular-devkit/build-angular
 
+=======
+RUN npm i & npm i -g @angular/cli@8.0.1 & npm i -dev @angular-devkit/build-angular
+>>>>>>> 3e6e31a4153b24e5bbcbf8ecc014db68c2a140f3
 CMD ng serve --host 0.0.0.0
