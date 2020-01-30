@@ -117,7 +117,7 @@ export class Server {
 
     public start() {
                 
-        mongoose.createConnection("mongodb://localhost:27017/td3", {
+        mongoose.createConnection("mongodb://db:27017/td3", {
             useUnifiedTopology: true
         }).then((conn) => {
             this.dataBaseConnection = conn;
@@ -139,7 +139,7 @@ export class Server {
             });
 
             this.databaseModelPerson = this.dataBaseConnection.model('person', personSchema);
-            console.log("connected to database on localhost:27017/td3")
+            console.log("connected to database on db:27017/td3")
         })
 
         this.app.listen(this.port,()=>{
