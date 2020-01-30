@@ -9,7 +9,7 @@ services:
   api:
     depends_on:
       - db
-    image: kiright/ueve-m1-technolog-td3-api:1.1
+    image: kiright/ueve-m1-technolog-td3-api:1.2
     ports:
       - 3011:3011
       - 3012:3012
@@ -17,6 +17,6 @@ services:
   front:
     depends_on:
       - api
-    image: kiright/ueve-m1-technolog-td3-front:1.1
+    image: kiright/ueve-m1-technolog-td3-front:1.2
     ports:
       - 4200:4200

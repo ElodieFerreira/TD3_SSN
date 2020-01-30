@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 let mongoose = require('mongoose');
-let database = mongoose.connect("mongodb://localhost:27017/td3", {
+let database = mongoose.connect("mongodb://db:27017/td3", {
     promiseLibrary: require('bluebird')
 
 });
